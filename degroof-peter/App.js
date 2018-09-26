@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
-import ProjectDetails from './src/pages/ProjectDetails';
-import Homescreen from './src/pages/Homescreen';
+import Login from './src/pages/Login';
+import Dashboard from './src/pages/Dashboard';
+import Projects from './src/pages/Projects';
 
 export default class App extends Component {
   render() {
     return (
       <Router hideNavBar="true">
         <Scene key="root">
-          <Scene key="ProjectDetails" component={ProjectDetails} title="ProjectDetails" initial={true} />
-          <Scene key="Homescreen" component={Homescreen} title="Homescreen" />
+          <Scene key="Login" component={Login} title="Login" initial={true} />
+          <Scene key="Dashboard" component={Dashboard} title="Dashboard" />
+          <Scene key="Projects" component={Projects} title="Projects" />
+          <Scene key="Profile" component={Projects} title="Profile" />
+
         </Scene>
       </Router>
     );
