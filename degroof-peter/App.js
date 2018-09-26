@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { Router, Scene } from 'react-native-router-flux';
+import { Router, Scene, Actions } from 'react-native-router-flux';
 import Login from './src/pages/Login';
 import Dashboard from './src/pages/Dashboard';
 import Projects from './src/pages/Projects';
@@ -23,8 +23,8 @@ export default class App extends Component {
                 skills:["accounting", "finances"],
                 applications:[],
                 selections:[],
-                login:"jean-mi",
-                pwd:"aaaaaaa",
+                login:"jean",
+                pwd:"Aaa",
             },
             {
                 userId:2,
@@ -79,6 +79,7 @@ export default class App extends Component {
   }
 
   activeUser(user){
+    Actions.Projects();
     this.setState({activeUser: user})
   }
 
@@ -86,7 +87,7 @@ export default class App extends Component {
     return (
       <Router hideNavBar="true">
         <Scene key="root">
-          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} match={this.activeUser} />
+          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} activeUser={this.activeUser.bind(this)} />
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
           <Scene key="Projects" component={Projects} title="Projects" data={this.state}/>
           <Scene key="Profile" component={Projects} title="Profile" />

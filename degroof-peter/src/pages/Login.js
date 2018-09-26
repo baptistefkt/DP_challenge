@@ -7,8 +7,8 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state={
-      loginValueHolder="",
-      pwdValueHolder="",
+      loginValueHolder:"jean",
+      pwdValueHolder:"Aaa",
     }
   }
 
@@ -17,21 +17,23 @@ class Login extends Component {
 
 
 
-  getValues=()=>{
+  getValues(){
     const loginValueHolder=this.state.loginValueHolder;
     const pwdValueHolder=this.state.pwdValueHolder;
-    let loggedUser= this.props.data.users.map((user)=>{
-      if (user.login=== loginValueHolder && user.pwd=== pwdValueHolder) {
-        return user
+    let isConnected = false;
+    this.props.data.users.map((user)=>{
+      if (user.login === loginValueHolder && user.pwd === pwdValueHolder) {
+        isConnected = true;
+        this.props.activeUser(user);
       } 
-      else {
-        return Actions.Login()
-      }
-  });
-     {this.props.activeUser({loggedUser})};
-
-
-    Actions.Dashboard();
+    });
+    if(!isConnected){
+      alert('Bad user') 
+    }else{
+      setTimeout(()=>{
+        Actions.Projects()
+      },200)
+    }
   }
 
     render() {
@@ -60,13 +62,15 @@ class Login extends Component {
             </Text>
             <Input
               placeholder='john@example.com'
+              value={this.state.loginValueHolder}
               onChangeText={loginValueHolder => this.setState({loginValueHolder})}
-            />
+              />
             <Text style={{alignSelf: 'center'}}>
               Password
             </Text>
             <Input
               placeholder='password'
+              value={this.state.pwdValueHolder}
               onChangeText={pwdValueHolder => this.setState({pwdValueHolder})}
             />
             <TouchableHighlight
@@ -82,7 +86,7 @@ class Login extends Component {
                 }}>
             <Button
               title="Login"
-              onPress={this.getValues}
+              onPress={this.getValues.bind(this)}
               color='white'
             />
             </TouchableHighlight>
