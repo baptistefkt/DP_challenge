@@ -14,7 +14,6 @@ export default class App extends Component {
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" />
           <Scene key="Projects" component={Projects} title="Projects" />
           <Scene key="Profile" component={Projects} title="Profile" />
-
         </Scene>
       </Router>
     );

@@ -1,25 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Navbar from '../components/Navbar';
 
-class Profile extends Component {
+export default class Profile extends Component {
 
     render() {
         return (
-            <View>
-                <Button
-                    title='Go Back'
-                    onPress={() => { Actions.pop(); }}>
-                    <Text>Goto back</Text>
-                </Button>
-                <Text>
-                    This is Profile page.
-                </Text>
-
-
+            <View style={{flex: 1}}>
+                <Navbar/>
             </View>
         );
     }
 }
-
-export default Profile;
