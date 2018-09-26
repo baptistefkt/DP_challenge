@@ -1,42 +1,46 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Button, } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import { Container, Content, Footer, FooterTab, Button, Icon } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 export default class Navbar extends Component {
     render() {
-        return(
-            <View style={{flex: 1}}>
-                <View style = {styles.navbar}>
-                    <View style = {styles.buttonView}>
-                        <Button color = "#4FBC83" onPress={() => { Actions.Dashboard(); }} title = "Dashboard" style = {styles.button}/>
-                    </View>
-                    <View style = {styles.buttonView}>
-                        <Button color = "#4FBC83" onPress={() => { Actions.Projects(); }} title = "Projects" style = {styles.button}/>
-                    </View>
-                    <View style = {styles.buttonView}>
-                        <Button color = "#4FBC83" onPress={() => { Actions.Profile(); }} title = "Profile" style = {styles.button}/>
-                    </View>
-                </View>
-            </View>
+        return (
+            <Container>
+                <Content/>
+                    <Footer>
+                        <FooterTab style = {styles.navbar}>
+                            <Button vertical onPress={() => { Actions.Dashboard(); }} title = "Dashboard">
+                                <Icon style = {styles.tabIcon} name = "apps"/>
+                                <Text style = {styles.tabText}>Dashboard</Text>
+                            </Button>
+                            <Button vertical onPress={() => { Actions.Projects(); }} title = "Projects">
+                                <Icon style = {styles.tabIcon} name = "list"/>
+                                <Text style = {styles.tabText}>Projects</Text>
+                            </Button>
+                            <Button vertical onPress={() => { Actions.Profile(); }} title = "Profile">
+                                <Icon style = {styles.tabIcon} name = "person"/>
+                                <Text style = {styles.tabText}>Profile</Text>
+                            </Button>
+                        </FooterTab>
+                    </Footer>
+            </Container>
         );
     }
 }
 
 const styles = StyleSheet.create({
     navbar: {
-        flexDirection: 'row',
-        position: 'absolute',
-        bottom: 0,
-    },
-    
-    buttonView: {
-        width: "33.333333%",
-        height: 35,
-        
+        backgroundColor: "white",
+        borderWidth: 1,
+        borderColor: "lightgrey",
     },
 
-    button: {
-        height: "100%",
-        width: "100%",
-    }
-})
+    tabText: {
+        color: "#4FBC83",
+    },
+
+    tabIcon: {
+        color: "#4FBC83",
+    },
+});    
