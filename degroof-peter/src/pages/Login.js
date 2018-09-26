@@ -3,55 +3,91 @@ import { View, Text, Image, StyleSheet, Button, TouchableHighlight } from 'react
 import { Input } from '../components/Input';
 import { Actions } from 'react-native-router-flux';
 
-export default class Login extends Component {
-  loginMatch = (userInput) => {
-    let loggedUser = this.props.data.users.map((user) => {
-      return (user.login === SOMETHING && user.pwd === SOMETHINGELSE)
-    })
+class Login extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      loginValueHolder:"jean",
+      pwdValueHolder:"Aaa",
+    }
   }
 
-  //this.props.activeUser({ton user})
-  handleSubmit = (e) => {
-    e.preventDefault();
-    let name = e.target.name.value;  // va chercher la valeur de l'input name
-    let description = e.target.description.value;// idem avec input description
-    let newBar = { name, description };
-    this.props.addBar(newBar);  //comme this a été bindé dans App, il utilisé le contexte où il est appelé, càd Forms
+    //this.props.activeUser({ton user})
+    
+
+
+
+  getValues(){
+    const loginValueHolder=this.state.loginValueHolder;
+    const pwdValueHolder=this.state.pwdValueHolder;
+    let isConnected = false;
+    this.props.data.users.map((user)=>{
+      if (user.login === loginValueHolder && user.pwd === pwdValueHolder) {
+        isConnected = true;
+        this.props.activeUser(user);
+      } 
+    });
+    if(!isConnected){
+      alert('Bad user') 
+    }else{
+      setTimeout(()=>{
+        Actions.Projects()
+      },200)
+    }
   }
 
-
-  render() {
-    return (
-      <View style={styles.main}>
-        <Image source={require('../assets/dp.png')}
-          style={styles.imagelogo} />
+    render() {
+        return (
+      
+          <View style={{backgroundColor: 'white', paddingBottom: 120}}>
+            <Image source={require('../assets/dp.png')}
+            style={{width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
+            }}/>
 
         <Text style={styles.text}>
           Email
             </Text>
-        <Input
-          placeholder='john@example.com'
-        />
-        <Text style={styles.text}>
-          Password
+            <Input
+              placeholder='john@example.com'
+              value={this.state.loginValueHolder}
+              onChangeText={loginValueHolder => this.setState({loginValueHolder})}
+              />
+            <Text style={{alignSelf: 'center'}}>
+              Password
             </Text>
-        <Input
-          placeholder='password'
-        />
-        <TouchableHighlight
-          style={styles.buttonlogin}>
-          <Button
-            title="Login"
-            onPress={() => { Actions.Dashboard(); }}
-            color='#4DE6A1'
-          />
-        </TouchableHighlight>
-        <View style={styles.line}>
-        </View>
-        <Text style={styles.textaccount}>
-          Dont have an account? Register <Text style={styles.here}>HERE</Text>
-        </Text>
-      </View>
+            <Input
+              placeholder='password'
+              value={this.state.pwdValueHolder}
+              onChangeText={pwdValueHolder => this.setState({pwdValueHolder})}
+            />
+            <TouchableHighlight
+                style ={{
+                    height: 40,
+                    width:160,
+                    borderRadius:10,
+                    backgroundColor : "#4DE6A1",
+                    marginLeft :50,
+                    marginRight:50,
+                    marginTop: 50,
+                    alignSelf: 'center'
+                }}>
+            <Button
+              title="Login"
+              onPress={this.getValues.bind(this)}
+              color='white'
+            />
+            </TouchableHighlight>
+            <View
+                style={{
+                  borderBottomColor: 'grey',
+                  borderBottomWidth: 1,
+                  marginTop: 20,
+                  width: 300,
+                  alignSelf: 'center'
+                }}
+              >
+              </View>
+          </View>
 
     );
   }
@@ -96,3 +132,4 @@ const styles = StyleSheet.create({
     color: 'grey'
   }
 });
+export default Login;
