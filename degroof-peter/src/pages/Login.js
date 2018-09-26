@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Button, TouchableHighlight } from 'react-native';
 import {Input} from '../components/Input';
-import {ButtonHome} from '../components/ButtonHome';
 import { Actions } from 'react-native-router-flux';
 
 
@@ -50,7 +49,7 @@ export default class Login extends Component {
                     alignSelf: 'center'
                 }}>
             <Button
-              title="Go to Projects"
+              title="Login"
               onPress={() => { Actions.Dashboard(); }}
               color='white'
             />
@@ -70,6 +69,3 @@ export default class Login extends Component {
         );
     }
 }
-
-
-export default Login;
