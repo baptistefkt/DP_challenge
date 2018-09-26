@@ -18,7 +18,7 @@ export default class App extends Component {
                 lastName: "React",
                 city: "Bruxelles",
                 zipCode:1130,
-                phone:0477123456,
+                phone:"0477123456",
                 totalHours:12,
                 skills:["accounting", "finances"],
                 applications:[],
@@ -32,7 +32,7 @@ export default class App extends Component {
                 lastName: "Deray",
                 city: "Charleroi",
                 zipCode: 7000,
-                phone:0477456754,
+                phone:"0477456754",
                 totalHours:12,
                 skills:["IT", "finances"],
                 applications:[],
@@ -92,9 +92,9 @@ export default class App extends Component {
     return (
       <Router hideNavBar="true">
         <Scene key="root">
-          <Scene {...this.props} key="Login" component={Login} title="Login" initial={true} data={this.state} />
+          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} />
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
-          <Scene key="Projects" component={Projects} title="Projects" />
+          <Scene key="Projects" component={Projects} title="Projects" data={this.state}/>
           <Scene key="Profile" component={Projects} title="Profile" />
 
         </Scene>

@@ -6,14 +6,14 @@ export default class Dashboard extends Component {
         let latestProjects= this.props.data.projects.map((project,index)=>{
             return (
                 <View key={"project"+ project.projectId}> 
-                    <Text>project.name</Text>
-                    <Text>project.projectName</Text>
-                    <Text>project.projectRegion</Text>
-                    <Text>project.fields</Text>
-                    <Text>project.skillsNeeded</Text>
-                    <Text>project.hoursNeeded</Text>
-                    <Text>project.type</Text>
-                    <Applied projectId={project.projectId} activeUser={this.props.data.activeUser}/>
+                    <Text>{project.name}</Text>
+                    <Text>{project.projectName}</Text>
+                    <Text>{project.projectRegion}</Text>
+                    <Text>{project.fields}</Text>
+                    <Text>{project.skillsNeeded}</Text>
+                    <Text>{project.hoursNeeded}</Text>
+                    <Text>{project.type}</Text>
+                    
                 </View>
             )
 
