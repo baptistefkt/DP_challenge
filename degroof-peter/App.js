@@ -23,8 +23,8 @@ export default class App extends Component {
                 skills:["accounting", "finances"],
                 applications:[],
                 selections:[],
-                login:"",
-                pwd:"",
+                login:"jean-mi",
+                pwd:"aaaaaaa",
             },
             {
                 userId:2,
@@ -35,10 +35,10 @@ export default class App extends Component {
                 phone:"0477456754",
                 totalHours:12,
                 skills:["IT", "finances"],
-                applications:[],
+                applications:[1],
                 selections:[],
-                login:"",
-                pwd:"",
+                login:"odile.deray@gmail.com",
+                pwd:"odilederay",
             }
         ],
         projects:[
