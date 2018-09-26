@@ -11,15 +11,19 @@ class Login extends Component {
     }
 
     //this.props.activeUser({ton user})
+    handleSubmit=(e)=>{
+      e.preventDefault();
+      let name=e.target.name.value;  // va chercher la valeur de l'input name
+      let description=e.target.description.value ;// idem avec input description
+      let newBar={name, description};
+      this.props.addBar(newBar);  //comme this a été bindé dans App, il utilisé le contexte où il est appelé, càd Forms
+  }
 
 
     render() {
         return (
       
-            <View style={{backgroundColor: 'white', paddingBottom: 120}}>
-                <Text>
-                    {this.props.title}
-                </Text>
+          <View style={{backgroundColor: 'white', paddingBottom: 120}}>
             <Image source={require('../assets/dp.png')}
             style={{width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
             }}/>

@@ -77,12 +77,6 @@ export default class App extends Component {
         ]
       }
   }
-  login =() =>{
-    let newActiveUser=this.props.
-    this.setState({
-      activeUser:newActiveUser
-    })
-  }
 
   activeUser(user){
     this.setState({activeUser: user})
@@ -92,7 +86,7 @@ export default class App extends Component {
     return (
       <Router hideNavBar="true">
         <Scene key="root">
-          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} />
+          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} match={this.activeUser} />
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
           <Scene key="Projects" component={Projects} title="Projects" data={this.state}/>
           <Scene key="Profile" component={Projects} title="Profile" />
