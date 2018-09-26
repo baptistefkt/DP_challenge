@@ -21,6 +21,7 @@ export default class Dashboard extends Component {
 
         return (
             <View>
+                {latestProjects}
                 <Button
                     title='Go Back'
                     onPress={() => { Actions.pop(); }}>

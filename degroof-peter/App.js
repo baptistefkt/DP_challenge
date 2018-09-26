@@ -84,12 +84,15 @@ export default class App extends Component {
     })
   }
 
+  activeUser(user){
+    this.setState({activeUser: user})
+  }
 
   render() {
     return (
       <Router hideNavBar="true">
         <Scene key="root">
-          <Scene key="Login" component={Login} title="Login" initial={true} />
+          <Scene {...this.props} key="Login" component={Login} title="Login" initial={true} data={this.state} />
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
           <Scene key="Projects" component={Projects} title="Projects" />
           <Scene key="Profile" component={Projects} title="Profile" />
