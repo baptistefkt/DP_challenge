@@ -3,9 +3,12 @@ import { View, Text, Image, StyleSheet, Button, TouchableHighlight } from 'react
 import {Input} from '../components/Input';
 import {ButtonHome} from '../components/ButtonHome';
 import { Actions } from 'react-native-router-flux';
-export default class Homescreen extends Component {
+
+class Profile extends Component {
+
     render() {
         return (
+<<<<<<< HEAD:degroof-peter/src/pages/Homescreen.js
           <View style={{backgroundColor: 'white', paddingBottom: 120}}>
             <Image source={require('../assets/dp.png')}
             style={{width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
@@ -68,3 +71,22 @@ export default class Homescreen extends Component {
         );
     }
 }
+=======
+            <View>
+                <Button
+                    title='Go Back'
+                    onPress={() => { Actions.pop(); }}>
+                    <Text>Goto back</Text>
+                </Button>
+                <Text>
+                    This is Profile page.
+                </Text>
+
+
+            </View>
+        );
+    }
+}
+
+export default Profile;
+>>>>>>> 50ac4a9cc3cdce3390656ffd683773ce744dde1f:degroof-peter/src/pages/Profile.js
