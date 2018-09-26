@@ -22,12 +22,13 @@ const styles = {
     color: '#000',
     fontSize: 16,
     margin: 5,
-    borderWidth: 1,  // size/width of the border
+    borderBottomWidth: 1,  // size/width of the border
     borderColor: 'lightgrey',  // color of the border
     height: 40,
     borderRadius: 5,
     width: 300,
     alignSelf: 'center',
+    alignItems: 'center',
     elevation: 1
   }
 };

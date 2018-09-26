@@ -7,65 +7,77 @@ import { Actions } from 'react-native-router-flux';
 export default class Login extends Component {
     render() {
         return (
-          <View style={{backgroundColor: 'white', paddingBottom: 120}}>
+          <View style={styles.main}>
             <Image source={require('../assets/dp.png')}
-            style={{width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
-            }}/>
+            style={styles.imagelogo}/>
 
-            <Text
-              style={{
-                fontWeight: '600',
-                fontSize: 30,
-                alignSelf: 'center',
-                color: '#4DE6A1',
-                textAlign: 'center',
-                marginBottom: '10%',
-                marginTop: '10%'
-              }}
-            >
-              {'Sign In'}
-            </Text>
-            <Text style={{alignSelf: 'center'}}>
+            <Text style={styles.text}>
               Email
             </Text>
             <Input
               placeholder='john@example.com'
             />
-            <Text style={{alignSelf: 'center'}}>
+            <Text style={styles.text}>
               Password
             </Text>
             <Input
               placeholder='password'
             />
             <TouchableHighlight
-                style ={{
-                    height: 40,
-                    width:160,
-                    borderRadius:10,
-                    backgroundColor : "#4DE6A1",
-                    marginLeft :50,
-                    marginRight:50,
-                    marginTop: 50,
-                    alignSelf: 'center'
-                }}>
+                style ={styles.buttonlogin}>
             <Button
               title="Login"
               onPress={() => { Actions.Dashboard(); }}
               color='white'
             />
             </TouchableHighlight>
-            <View
-                style={{
-                  borderBottomColor: 'grey',
-                  borderBottomWidth: 1,
-                  marginTop: 20,
-                  width: 300,
-                  alignSelf: 'center'
-                }}
-              >
-              </View>
+            <View style={styles.line}>
+             </View>
+             <Text style={styles.textaccount}>
+                Dont have an account? Register <Text style={styles.here}>HERE</Text>
+             </Text>
           </View>
 
         );
     }
 }
+
+const styles = StyleSheet.create({
+  text: {
+    alignSelf: 'center',
+    fontFamily:'Palatino',
+    fontSize:20, color: "#4DE6A1",
+    marginTop:20,
+    marginBottom:10
+  },
+  line: {
+    borderBottomColor: 'lightgrey',
+    borderBottomWidth: 1,
+    marginTop: 30,
+    width: 300,
+    alignSelf: 'center'
+  },
+  buttonlogin:{
+    height: 40,
+    width:160,
+    borderRadius:10,
+    backgroundColor : "#4DE6A1",
+    marginLeft :50,
+    marginRight:50,
+    marginTop: 50,
+    marginBottom:20,
+    alignSelf: 'center'
+  },
+  textaccount:{
+    alignSelf: 'center', fontSize:10, color: 'lightgrey', marginTop:20
+  },
+  imagelogo:{
+    width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
+  },
+  main:{
+    backgroundColor: 'white', paddingBottom: 120
+  },
+  here:{
+    color:'grey'
+  }
+});
