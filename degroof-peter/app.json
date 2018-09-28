@@ -14,6 +14,8 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "android": {
+      "package": "com.becode.skillstoneeds"},
     "updates": {
       "fallbackToCacheTimeout": 0
     },
