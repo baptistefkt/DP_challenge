@@ -1,44 +1,57 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
-import Navbar from '../components/Navbar';
+import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-export default class Profile extends Component {
+class ProjectDetail extends Component {
 
     render() {
         return (
-            <View  style={{flex: 1}} style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.cardProfile}>
-                    <Text style={styles.name}>Jean Dupont </Text>
-                    <Image source={require('../assets/profilePic1.jpg')} style={styles.image}></Image>
+                    <Text style={styles.name}>BeCode</Text>
+                    <Image source={require('../assets/becode_logo.jpg')} style={styles.image}></Image>
                 </View>
                 <View style={styles.textContainer}>
                     <View style={styles.adress}>
                         <View >
-                            <Text style={styles.adressTitle}>Adress : </Text>
+                            <Text style={styles.adressTitle}>Region : </Text>
                         </View>
                         <View style={styles.adressDetails}>
-                            <Text>126 rue de la Glacière</Text>
-                            <Text>1000 Bruxelles</Text>
+                            <Text>Bruxelles</Text>
                         </View>
                     </View>
                     <View style={styles.skills}>
                         <Text style={styles.skillsTitle}>
-                            Skills :
+                            Skills needed :
                         </Text>
-                        <Text>IT, HR, Coaching</Text>
+                        <Text>IT, HR</Text>
                     </View>
                     <View style={styles.hours}>
                         <Text style={styles.hoursTitle}>
-                            Total hours for this year :
+                            Hours needed :
                         </Text>
-                        <Text>14/24</Text>
+                        <Text>4h</Text>
+                    </View>
+                    <View style={styles.description}>
+                        <Text style={styles.descriptionTitle}>
+                            Mission description :
+                        </Text>
+                        <Text style={styles.descriptionText}>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi perferendis placeat fugiat quaerat nisi modi aperiam quibusdam repellat amet iure.
+                        </Text>
                     </View>
                 </View>
-                <Navbar/>
+                <View style={styles.btn}>
+                    <Button color='#4DE6A1' title='Apply to this mission' onPress={() => { Actions.pop(); }}>
+                    </Button>
+                </View>
+
             </View>
         );
     }
 }
+
+export default ProjectDetail;
 
 const styles = StyleSheet.create({
     container: {
@@ -49,7 +62,7 @@ const styles = StyleSheet.create({
     },
 
     cardProfile: {
-        flex: 1,
+        flex: 2,
         justifyContent: "space-around",
     },
 
@@ -66,7 +79,7 @@ const styles = StyleSheet.create({
     },
 
     textContainer: {
-        flex: 1,
+        flex: 2,
         justifyContent: "space-around",
         alignItems: "center",
     },
@@ -93,7 +106,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: 'lightgrey',
         borderStyle: 'solid',
-        paddingTop: 40
+        paddingTop: 20
     },
 
     skillsTitle: {
@@ -105,7 +118,8 @@ const styles = StyleSheet.create({
     hours: {
         flex: 1,
         flexDirection: "row",
-        paddingTop: 40
+        paddingTop: 20,
+
     },
 
     hoursTitle: {
@@ -113,4 +127,31 @@ const styles = StyleSheet.create({
         color: '#4DE6A1',
         paddingRight: 20
     },
+
+    description: {
+        flex: 3,
+        paddingTop: 20,
+    },
+
+    descriptionTitle: {
+        fontWeight: 'bold',
+        color: '#4DE6A1',
+        paddingLeft: 20,
+        paddingBottom: 20
+    },
+
+    descriptionText: {
+        paddingLeft: 20,
+        paddingRight: 20,
+        color: 'grey',
+    },
+
+    btn: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        paddingBottom: 30
+    }
+
 })
+
+

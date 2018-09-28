@@ -28,6 +28,8 @@ const styles = {
     width: 300,
     alignSelf: 'center',
     alignItems: 'center',
+    paddingLeft: 10,
+    paddingBottom: 10,
     elevation: 1
   }
 };
