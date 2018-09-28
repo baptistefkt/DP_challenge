@@ -31,11 +31,12 @@ Formation **Becode.org**  (Start-up Lovelace2)
 
 ### Déroulement
 
-1. Agile (manipulation tableau ![kanban](kanbandp.png)) + tenue quotidienne du planning du groupe.  
+1. Agile (manipulation tableau kanban) + tenue quotidienne du planning du groupe.
+![kanban](kanbandp.png)  
 2. Désignation du capitaine du repo, qui gère les merge et les conflits (Quang Son Lee)
 3. Rédaction d'un Readme
 4. Réalisation d'un Mockup avec Figma ![Mockup](dpchal.png)
-5. backend: Tentative d'utilisation de la base de données de Firebase
+5. backend: Tentative d'utilisation d'une base de données via Firebase -> Création en dure pour pouvoir continuer
 6. Utilisation de Git pour le versioning et utilisation de branches
 
 
