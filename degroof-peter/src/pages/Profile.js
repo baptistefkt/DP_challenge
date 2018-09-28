@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Image, StyleSheet, Button, TouchableHighlight } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Navbar from '../components/Navbar';
 
@@ -12,4 +12,4 @@ export default class Profile extends Component {
             </View>
         );
     }
-}
+}    
