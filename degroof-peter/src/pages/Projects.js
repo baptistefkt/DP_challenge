@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Button, Icon } from 'native-base';
 import { Actions } from 'react-native-router-flux';
+import Navbar from '../components/Navbar';
 
-class Projects extends Component {
+export default class Projects extends Component {
 
     render() {
-        let latestProjects= this.props.data.projects.map((project,index)=>{
+        let latestProjects = this.props.data.projects.map((project, index) => {
             return (
-                <View key={"project"+ project.projectId}> 
+                <View key={"project" + project.projectId}>
                     <Text>{project.name}</Text>
                     <Text>{project.projectName}</Text>
                     <Text>{project.projectRegion}</Text>
@@ -15,27 +17,34 @@ class Projects extends Component {
                     <Text>{project.skillsNeeded}</Text>
                     <Text>{project.hoursNeeded}</Text>
                     <Text>{project.type}</Text>
-                    
+                    <Button style={styles.navbar} onPress={() => { Actions.ProjectDetail(); }}>
+                        <Icon style={styles.icon} name='eye'></Icon>
+                    </Button>
+
                 </View>
             )
 
         })
         return (
-            <View>
+            <View style={{flex: 1}}>
                 {latestProjects}
-                <Button
-                    title='Go Back'
-                    onPress={() => { Actions.pop(); }}>
-                    <Text>Goto back</Text>
-                </Button>
-                <Text>
-                    This is Projects page.
-                </Text>
-
-
+                <Navbar/>
             </View>
         );
     }
 }
 
-export default Projects;
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+
+    navbar: {
+        backgroundColor: 'white',
+    },
+
+    icon: {
+        color: '#4DE6A1'
+    }
+})

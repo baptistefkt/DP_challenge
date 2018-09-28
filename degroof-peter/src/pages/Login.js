@@ -4,7 +4,7 @@ import { Input } from '../components/Input';
 import { Actions } from 'react-native-router-flux';
 
 class Login extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state={
       loginValueHolder:"",
@@ -33,58 +33,42 @@ class Login extends Component {
     }
   }
 
-    render() {
-        return (
-      
-          <View style={{backgroundColor: 'white', paddingBottom: 120}}>
-            <Image source={require('../assets/dp.png')}
-            style={{width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center'
-            }}/>
+  render() {
+    return (
+
+      <View style={styles.main}>
+        <Image source={require('../assets/dp.png')}
+          style={styles.imagelogo} />
 
         <Text style={styles.text}>
           Email
             </Text>
-            <Input
-              placeholder='john@example.com'
-              value={this.state.loginValueHolder}
-              onChangeText={loginValueHolder => this.setState({loginValueHolder})}
-              />
-            <Text style={{alignSelf: 'center'}}>
-              Password
+        <Input
+          placeholder='john@example.com'
+          value={this.state.loginValueHolder}
+          onChangeText={loginValueHolder => this.setState({ loginValueHolder })}
+        />
+        <Text style={styles.text}>
+          Password
             </Text>
-            <Input
-              placeholder='password'
-              value={this.state.pwdValueHolder}
-              onChangeText={pwdValueHolder => this.setState({pwdValueHolder})}
-            />
-            <TouchableHighlight
-                style ={{
-                    height: 40,
-                    width:160,
-                    borderRadius:10,
-                    backgroundColor : "#4DE6A1",
-                    marginLeft :50,
-                    marginRight:50,
-                    marginTop: 50,
-                    alignSelf: 'center'
-                }}>
-            <Button
-              title="Login"
-              onPress={this.getValues.bind(this)}
-              color='white'
-            />
-            </TouchableHighlight>
-            <View
-                style={{
-                  borderBottomColor: 'grey',
-                  borderBottomWidth: 1,
-                  marginTop: 20,
-                  width: 300,
-                  alignSelf: 'center'
-                }}
-              >
-              </View>
-          </View>
+        <Input
+          placeholder='password'
+          value={this.state.pwdValueHolder}
+          onChangeText={pwdValueHolder => this.setState({ pwdValueHolder })}
+        />
+        <TouchableHighlight
+          style={styles.buttonlogin}>
+          <Button
+            title="Login"
+            onPress={this.getValues.bind(this)}
+            color='#4DE6A1'
+          />
+        </TouchableHighlight>
+        <View style={styles.line}></View>
+        <Text style={styles.textaccount}>
+          Dont have an account? Register <Text style={styles.here}>HERE</Text>
+        </Text>
+      </View>
 
     );
   }
@@ -115,10 +99,18 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   textaccount: {
-    alignSelf: 'center', fontSize: 10, color: 'lightgrey', marginTop: 20
+    alignSelf: 'center',
+    fontSize: 10,
+    color: 'lightgrey',
+    marginTop: 20
   },
   imagelogo: {
-    width: 300, height: 150, resizeMode: 'contain', alignSelf: 'center', paddingTop: 20,
+    width: 300,
+    height: 150,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    paddingTop: 30,
+    marginBottom: 30,
   },
   main: {
     backgroundColor: 'white',

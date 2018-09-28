@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 import { Router, Scene, Actions } from 'react-native-router-flux';
 import Login from './src/pages/Login';
 import Dashboard from './src/pages/Dashboard';
 import Projects from './src/pages/Projects';
 import Profile from './src/pages/Profile';
+import ProjectDetail from './src/pages/ProjectDetail';
 
 export default class App extends Component {
 
@@ -79,31 +79,22 @@ export default class App extends Component {
       }
   }
 
-  activeUser(user){
+  activeUser(user) {
     Actions.Projects();
-    this.setState({activeUser: user})
+    this.setState({ activeUser: user })
   }
 
   render() {
     return (
-      <Router hideNavBar="true">
+      <Router >
         <Scene key="root">
-          <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} activeUser={this.activeUser.bind(this)} />
-          <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
-          <Scene key="Projects" component={Projects} title="Projects" data={this.state}/>
+          <Scene key="Login" component={Login} hideNavBar="true" title="Login" initial={true} data={this.state} activeUser={this.activeUser.bind(this)} />
+          <Scene key="Dashboard" hideNavBar="true" component={Dashboard} title="Dashboard" data={this.state} />
+          <Scene key="Projects" component={Projects} title="Projects" data={this.state} />
           <Scene key="Profile" component={Profile} title="Profile" />
-
+          <Scene key="ProjectDetail" component={ProjectDetail} title="Project Details" />
         </Scene>
       </Router>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

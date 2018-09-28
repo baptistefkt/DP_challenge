@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Applied from '../data/Applied';
+import { StyleSheet, View, Text, } from 'react-native';
+import Navbar from '../components/Navbar';
 
 
 export default class Dashboard extends Component {
     render() {
-        let latestProjects= this.props.data.projects.map((project,index)=>{
-            alert('dash ' + this.props.data.activeUser)
-            alert('user ' + this.props.data.activeUser.user)
-            alert('appli ' + this.props.data.activeUser.applications);
+        let latestProjects = this.props.data.projects.map((project, index) => {
             return (
-                <View key={"project"+ project.projectId}> 
+                <View key={"project" + project.projectId}>
                     <Text>{project.name}</Text>
                     <Text>{project.projectName}</Text>
                     <Text>{project.projectRegion}</Text>
@@ -27,28 +26,41 @@ export default class Dashboard extends Component {
         })
 
         return (
-            <View>
-               
+            <View style={{flex: 1}}>
                 {latestProjects}
-                <Button
-                    title='Go Back'
-                    onPress={() => { Actions.pop(); }}>
-                    <Text>Goto back</Text>
-                </Button>
-                <Text>
-                    This is Dashboard page.
-                </Text>
-                <Button
-                    title='Go to Projects'
-                    onPress={() => { Actions.Projects(); }}>
-                    <Text>Goto Projects page</Text>
-                </Button>
-                <Button
-                    title='Go to Profile'
-                    onPress={() => { Actions.Profile(); }}>
-                    <Text>Goto Profile</Text>
-                </Button>
+                <Navbar/>
             </View>
         );
     }
 }
+
+const styles = StyleSheet.create({
+    mainContainer: {
+        flex: 1,
+    },
+
+    listContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    navContainer: {
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+
+    title: {
+        color: '#4DE6A1',
+        fontSize: 25,
+        paddingBottom: 30,
+    },
+
+    navbar: {
+        backgroundColor: 'white',
+    },
+
+    icon: {
+        color: '#4DE6A1'
+    }
+})
