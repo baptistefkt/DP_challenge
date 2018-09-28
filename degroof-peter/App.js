@@ -62,7 +62,27 @@ export default class App extends Component {
           hoursNeeded: 15,
           type: "mentoring",
           mission: "Révision du budget pour demande de subside européen ",
-        }
+        },
+        {
+            projectId: 3,
+            projectName: "Carabistouille",
+            projectRegion: "Hainaut",
+            fields: ["social"],
+            skillsNeeded: ["accounting"],
+            hoursNeeded: 15,
+            type: "mentoring",
+            mission: "Révision du budget pour demande de subside européen ",
+        },
+        {
+            projectId: 4,
+            projectName: "Carabistouille",
+            projectRegion: "Hainaut",
+            fields: ["social"],
+            skillsNeeded: ["accounting"],
+            hoursNeeded: 15,
+            type: "mentoring",
+            mission: "Révision du budget pour demande de subside européen ",
+        },
       ],
       fields: [
         "education",
