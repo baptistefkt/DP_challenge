@@ -6,7 +6,7 @@ export default class Profile extends Component {
 
     render() {
         return (
-            <View  style={{flex: 1}} style={styles.container}>
+            <View style={styles.container}>
                 <View style={styles.cardProfile}>
                     <Text style={styles.name}>Jean Dupont </Text>
                     <Image source={require('../assets/profilePic1.jpg')} style={styles.image}></Image>
@@ -34,7 +34,6 @@ export default class Profile extends Component {
                         <Text>14/24</Text>
                     </View>
                 </View>
-                <Navbar/>
             </View>
         );
     }
@@ -93,7 +92,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: 'lightgrey',
         borderStyle: 'solid',
-        paddingTop: 40
+        paddingTop: 25
     },
 
     skillsTitle: {
@@ -105,7 +104,7 @@ const styles = StyleSheet.create({
     hours: {
         flex: 1,
         flexDirection: "row",
-        paddingTop: 40
+        paddingTop: 30
     },
 
     hoursTitle: {
