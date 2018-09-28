@@ -23,42 +23,27 @@ export default class Dashboard extends Component {
         })
 
         return (
-            //  <View>
-            //      {latestProjects}
-            //     <Button
-            //         title='Go Back'
-            //         onPress={() => { Actions.pop(); }}>
-            //         <Text>Goto back</Text>
-            //     </Button>
-            //     <Text>
-            //         This is Dashboard page.
-            //     </Text>
-            //     <Button
-            //         title='Go to Projects'
-            //         onPress={() => { Actions.Projects(); }}>
-            //         <Text>Goto Projects page</Text>
-            //     </Button>
-            //     <Button
-            //         title='Go to Profile'
-            //         onPress={() => { Actions.Profile(); }}>
-            //         <Text>Goto Profile</Text>
-            //     </Button>
 
-            <Container style={styles.container}>
-                {latestProjects}
-                <Footer style={styles.footer}>
-                    <FooterTab style={styles.navbar}>
-                        <Button >
-                            <Icon name="apps" style={styles.icon} />
-                        </Button>
-                        <Button onPress={() => { Actions.Projects(); }}>
-                            <Icon name="list" style={styles.icon} />
-                        </Button>
-                        <Button onPress={() => { Actions.Profile(); }}>
-                            <Icon name="person" style={styles.icon} />
-                        </Button>
-                    </FooterTab>
-                </Footer>
+            <Container style={styles.mainContainer}>
+                <Container style={styles.listContainer}>
+                    <Text style={styles.title}>DASHBOARD</Text>
+                    {latestProjects}
+                </Container>
+                <Container style={styles.navContainer}>
+                    <Footer style={styles.footer}>
+                        <FooterTab style={styles.navbar}>
+                            <Button onPress={() => { Actions.Projects(); }}>
+                                <Icon name="list" style={styles.icon} />
+                            </Button>
+                            <Button >
+                                <Icon name="apps" style={styles.icon} />
+                            </Button>
+                            <Button onPress={() => { Actions.Profile(); }}>
+                                <Icon name="person" style={styles.icon} />
+                            </Button>
+                        </FooterTab>
+                    </Footer>
+                </Container>
             </Container>
 
 
@@ -67,13 +52,25 @@ export default class Dashboard extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
+    mainContainer: {
+        flex: 1,
+    },
+
+    listContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    navContainer: {
         flex: 1,
         justifyContent: 'flex-end'
     },
 
-    footer: {
-
+    title: {
+        color: '#4DE6A1',
+        fontSize: 25,
+        paddingBottom: 30,
     },
 
     navbar: {

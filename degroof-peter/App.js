@@ -90,7 +90,7 @@ export default class App extends Component {
       <Router >
         <Scene key="root">
           <Scene key="Login" component={Login} hideNavBar="true" title="Login" initial={true} data={this.state} activeUser={this.activeUser.bind(this)} />
-          <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state} />
+          <Scene key="Dashboard" hideNavBar="true" component={Dashboard} title="Dashboard" data={this.state} />
           <Scene key="Projects" component={Projects} title="Projects" data={this.state} />
           <Scene key="Profile" component={Profile} title="Profile" />
           <Scene key="ProjectDetail" component={ProjectDetail} title="Project Details" />

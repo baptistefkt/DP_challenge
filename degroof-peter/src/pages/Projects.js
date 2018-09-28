@@ -29,11 +29,11 @@ class Projects extends Component {
                 {latestProjects}
                 <Footer style={styles.footer}>
                     <FooterTab style={styles.navbar}>
-                        <Button onPress={() => { Actions.Dashboard(); }}>
-                            <Icon name="apps" style={styles.icon} />
-                        </Button>
                         <Button onPress={() => { Actions.Projects(); }}>
                             <Icon name="list" style={styles.icon} />
+                        </Button>
+                        <Button onPress={() => { Actions.Dashboard(); }}>
+                            <Icon name="apps" style={styles.icon} />
                         </Button>
                         <Button onPress={() => { Actions.Profile(); }}>
                             <Icon name="person" style={styles.icon} />
