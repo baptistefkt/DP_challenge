@@ -6,33 +6,30 @@ import { Actions } from 'react-native-router-flux';
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      loginValueHolder: "jean",
-      pwdValueHolder: "Aaa",
+    this.state={
+      loginValueHolder:"",
+      pwdValueHolder:"",
     }
   }
 
-  //this.props.activeUser({ton user})
-
-
-
-
-  getValues() {
-    const loginValueHolder = this.state.loginValueHolder;
-    const pwdValueHolder = this.state.pwdValueHolder;
+  getValues(){
+    const loginValueHolder=this.state.loginValueHolder;
+    const pwdValueHolder=this.state.pwdValueHolder;
     let isConnected = false;
-    this.props.data.users.map((user) => {
-      if (user.login === loginValueHolder && user.pwd === pwdValueHolder) {
+    this.props.data.users.map((user)=>{
+
+     if (user.login === loginValueHolder && user.pwd === pwdValueHolder  && loginValueHolder!="" && pwdValueHolder!="" ) {
         isConnected = true;
         this.props.activeUser(user);
-      }
-    });
-    if (!isConnected) {
-      alert('Bad user')
-    } else {
-      setTimeout(() => {
+      } 
+    })
+    if(!isConnected){
+      alert('login error!') 
+    }
+    else{
+      setTimeout(()=>{
         Actions.Dashboard()
-      }, 200)
+      },200)
     }
   }
 
