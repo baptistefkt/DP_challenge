@@ -23,7 +23,7 @@ Formation **Becode.org**  (Start-up Lovelace2)
 
 ### Consignes 
 
-* ![Consignes](Becode28sept-1.odp)
+* ![Consignes](Becode28sept.pdf)
 * Charte Graphique fourni par l'équipe de Degroof Petercam
 * ![Synthèse du Challenge](DegroofPetercam-challenge2018.pdf)
 
