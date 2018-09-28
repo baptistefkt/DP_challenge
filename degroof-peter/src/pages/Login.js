@@ -7,31 +7,28 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state={
-      loginValueHolder:"jean",
-      pwdValueHolder:"Aaa",
+      loginValueHolder:"",
+      pwdValueHolder:"",
     }
   }
-
-    //this.props.activeUser({ton user})
-    
-
-
 
   getValues(){
     const loginValueHolder=this.state.loginValueHolder;
     const pwdValueHolder=this.state.pwdValueHolder;
     let isConnected = false;
     this.props.data.users.map((user)=>{
-      if (user.login === loginValueHolder && user.pwd === pwdValueHolder) {
+
+     if (user.login === loginValueHolder && user.pwd === pwdValueHolder  && loginValueHolder!="" && pwdValueHolder!="" ) {
         isConnected = true;
         this.props.activeUser(user);
       } 
-    });
+    })
     if(!isConnected){
-      alert('Bad user') 
-    }else{
+      alert('login error!') 
+    }
+    else{
       setTimeout(()=>{
-        Actions.Projects()
+        Actions.Dashboard()
       },200)
     }
   }

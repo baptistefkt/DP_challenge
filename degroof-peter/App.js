@@ -22,7 +22,7 @@ export default class App extends Component {
                 phone:"0477123456",
                 totalHours:12,
                 skills:["accounting", "finances"],
-                applications:[],
+                applications:[1,2],
                 selections:[],
                 login:"jean",
                 pwd:"Aaa",
@@ -45,7 +45,7 @@ export default class App extends Component {
         projects:[
             {
                 projectId:1,
-                projectName:"Loupiote",
+                projectName:"Loupiotte",
                 projectRegion:"Bruxelles",
                 fields:["education","social"],
                 skillsNeeded:["IT", "accounting"],
@@ -91,7 +91,7 @@ export default class App extends Component {
           <Scene key="Login" component={Login} title="Login" initial={true} data={this.state} activeUser={this.activeUser.bind(this)} />
           <Scene key="Dashboard" component={Dashboard} title="Dashboard" data={this.state}/>
           <Scene key="Projects" component={Projects} title="Projects" data={this.state}/>
-          <Scene key="Profile" component={Projects} title="Profile" />
+          <Scene key="Profile" component={Profile} title="Profile" />
 
         </Scene>
       </Router>

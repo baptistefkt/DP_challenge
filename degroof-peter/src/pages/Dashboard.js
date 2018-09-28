@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import Applied from '../data/Applied';
 
 
 export default class Dashboard extends Component {
     render() {
         let latestProjects= this.props.data.projects.map((project,index)=>{
+            alert('dash ' + this.props.data.activeUser)
+            alert('user ' + this.props.data.activeUser.user)
+            alert('appli ' + this.props.data.activeUser.applications);
             return (
                 <View key={"project"+ project.projectId}> 
                     <Text>{project.name}</Text>
@@ -15,7 +19,8 @@ export default class Dashboard extends Component {
                     <Text>{project.skillsNeeded}</Text>
                     <Text>{project.hoursNeeded}</Text>
                     <Text>{project.type}</Text>
-                    {/* <Applied projectId={project.projectId} activeUser={this.props.data.activeUser}/> */}
+         
+                    <Applied projectId={project.projectId} activeUser={this.props.data.activeUser}/>
                 </View>
             )
 
@@ -23,6 +28,7 @@ export default class Dashboard extends Component {
 
         return (
             <View>
+               
                 {latestProjects}
                 <Button
                     title='Go Back'
