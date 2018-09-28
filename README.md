@@ -13,7 +13,6 @@ Formation **Becode.org**  (Start-up Lovelace2)
 * Andrea Pinna Picone
 * Baptiste Firket
 * Morgane Meganck
-* Liliane Mamane
 
 
 ## Projet
@@ -24,9 +23,9 @@ Formation **Becode.org**  (Start-up Lovelace2)
 
 ### Consignes 
 
-![Consignes](Becode28sept-1.odp)
-![Charte Graphique](CharteGraphiqueDegroofPetercam.pdf)
-![Synthèse du Challenge](DegroofPetercam-challenge2018.pdf)
+* ![Consignes](Becode28sept-1.odp)
+* Charte Graphique fourni par l'équipe de Degroof Petercam
+* ![Synthèse du Challenge](DegroofPetercam-challenge2018.pdf)
 
 
 
@@ -34,9 +33,10 @@ Formation **Becode.org**  (Start-up Lovelace2)
 
 1. Agile (manipulation tableau kanban) + tenue quotidienne du planning du groupe.  
 2. Désignation du capitaine du repo, qui gère les merge et les conflits (Quang Son Lee)
-3. Rédaction d'un readme complet et professionnel
-4. Frontend: Réalisation d'un Mockup avec Figma [Mockup](dpchal.png)
-5. backend: Tentative d'utilisation de Firebase et de Firestore
+3. Rédaction d'un Readme
+4. Réalisation d'un Mockup avec Figma ![Mockup](dpchal.png)
+5. backend: Tentative d'utilisation de la base de données de Firebase
+6. Utilisation de Git pour le versioning et utilisation de branches
 
 
 
