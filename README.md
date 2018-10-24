@@ -1,12 +1,12 @@
-# Degroof Petercam
+# Degroof Petercam Challenge
+
+## Application Mobile 
+
+Conception et réalisation d'une application mobile pour le personnel de la banque Degroof Petercam. 
+Projet réalisé dans le cadre de la formation BeCode
 
 
-# Application Mobile 
-
-Analyser, concevoir et développer une application mobile pour Androïd.
-
-
-## Equipe
+### Equipe
 
 Formation **Becode.org**  (Start-up Lovelace2)
 * Quang Son Lee
@@ -15,37 +15,38 @@ Formation **Becode.org**  (Start-up Lovelace2)
 * Morgane Meganck
 
 
-## Projet
+### Projet
 
-* Réalisation sous React Native 
+* Technologies utilisées : React Native, Expo  
 * Durée: 3 jours ouvrables (Début: 24/09/2018 - Fin: 26/09/2018)
 
 
-## Consignes 
+### Consignes 
 
-* ![Consignes](Becode28sept.pdf)
-* Charte Graphique fourni par l'équipe de Degroof Petercam
-* ![Synthèse du Challenge](DegroofPetercam-challenge2018.pdf)
+* [Consignes](Becode28sept.pdf)
+* Charte graphique fournie par l'équipe de Degroof Petercam
+* [Synthèse du Challenge](DegroofPetercam-challenge2018.pdf)
 
 
 
-## Déroulement
+### Déroulement
 
-1. Agile (manipulation tableau kanban) + tenue quotidienne du planning du groupe.
+1. Agile (mise en place d'un kanban) + tenue quotidienne du planning du groupe.
 ![kanban](kanbandp.png)  
-2. Désignation du capitaine du repo, qui gère les merge et les conflits (Quang Son Lee)
-3. Réalisation d'un Mockup avec Figma ![Mockup](dpchal.png)
-4. Backend: Tentative d'utilisation d'une base de données via Firebase -> Création en dure pour pouvoir continuer
-5. Utilisation de Git pour le versioning et utilisation de branches
+2. Utilisation de Git pour le versioning et utilisation de branches
+3. Désignation du capitaine du repo, qui gère les merge et les conflits (Quang Son Lee)
+4. Réalisation d'un Mockup avec Figma ![Mockup](dpchal.png)
+5. Backend: Tentative d'utilisation d'une base de données via Firebase -> échec -> Création d'une base de donnée factice .json pour pouvoir continuer le développement de l'app.  
 6. Rédaction d'un Readme
 
 
-## Screenshots
+### Screenshots
 
-* ![Page Login](pageLogin.png)
-* ![Page Profil](pageProfil.png)
-* ![Page Projets 1/2](pageProjects1.png)
-* ![Page Projets 2/2](pageProjects2.png)
-* ![Page Détail Projet](pageProjectDetails.png)
+![degroofphone](https://user-images.githubusercontent.com/18186452/47439139-229f1d80-d7ac-11e8-8163-46b3cb5d9e37.png)
+
+
+![degroof_mockup](https://user-images.githubusercontent.com/18186452/47438949-bc19ff80-d7ab-11e8-9e8e-c3f04a89865c.png)
+
+
 
 
